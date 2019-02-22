@@ -1,8 +1,17 @@
 class Hero
-  attr_reader :damage
+  attr_reader :damage, :abilities
 
   def initialize(type = nil)
-    @damage = (type == :warrior) ? 15 : 10
+    @abilities = []
+    if type == :warrior
+      @damage = 15
+      @abilities << :strike
+    elsif type == :mage
+      @damage = 7
+      @abilities << :magic_arrow
+    else
+      @damage = 10
+    end
   end
 
   def damage
