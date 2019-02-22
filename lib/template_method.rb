@@ -1,7 +1,7 @@
 class Hero
   attr_reader :damage, :abilities
 
-     def initialize
+  def initialize
     @abilities = hero_abilities
     @damage = hero_damage
   end
@@ -17,6 +17,16 @@ class Hero
   def hero_damage
     10
   end
+
+  def greet
+    greets = ['Hello']
+    greets << greet_line_unique
+    greets
+  end
+
+  def greet_line_unique
+    raise 'You must define greet_line_unique in the subclasses'
+  end
 end
 
 class Warrior < Hero
@@ -26,6 +36,10 @@ class Warrior < Hero
 
   def hero_damage
     15
+  end
+
+  def greet_line_unique
+    'Warrior is ready to fight'
   end
 end
 
