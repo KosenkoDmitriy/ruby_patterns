@@ -1,8 +1,8 @@
 class Hero
   attr_reader :damage
 
-  def initialize
-    @damage = 10
+  def initialize(type = nil)
+    @damage = (type == :warrior) ? 15 : 10
   end
 
   def damage
@@ -12,4 +12,5 @@ class Hero
   def attack
     "Attacked dealing #{@damage} damage"
   end
+
 end
