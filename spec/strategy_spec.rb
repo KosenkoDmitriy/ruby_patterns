@@ -13,9 +13,13 @@ describe 'Strategy Pattern' do
       expect(hero.health).to eq(5)
     end
     
-    describe 'printing stats' do
+    describe 'Printing stats' do
       it 'prints battle stats by default' do
         expect(hero.print_stats).to eq("Damage: 10\nHealth: 5")
+      end
+
+      it 'prints skills' do
+        expect(hero.print_stats(:skills)).to eq("Stealth\nDriving\nIntimidation\n")
       end
     end
 
