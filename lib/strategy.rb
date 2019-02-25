@@ -1,14 +1,15 @@
+# frozen_string_literal: true
+
 class Hero
+  attr_reader :damage, :health, :skills
   
-  def damage
-    10
+  def initialize
+    @damage = 10
+    @health = 5
+    @skills = %i[stealth driving intimidation]
   end
 
-  def health
-    5
-  end
-
-  def skills
-    [:stealth, :driving, :intimidation]
+  def print_stats
+    "Damage: #{@damage}\nHealth: #{@health}"
   end
 end
